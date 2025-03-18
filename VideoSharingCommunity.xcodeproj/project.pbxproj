@@ -6,41 +6,50 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E45A76092D65034B00A7DD1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E45A76082D65034B00A7DD1B /* GoogleService-Info.plist */; };
+		E45A760D2D6504C200A7DD1B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E45A760C2D6504C200A7DD1B /* FirebaseAuth */; };
+		E45A760F2D6504C200A7DD1B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E45A760E2D6504C200A7DD1B /* FirebaseDatabase */; };
+		E45A76112D6504D200A7DD1B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E45A76102D6504D200A7DD1B /* FirebaseAnalytics */; };
+		E45A76132D6504D200A7DD1B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E45A76122D6504D200A7DD1B /* FirebaseFirestore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
-		E45728F52D500FB500D66C3E /* PBXContainerItemProxy */ = {
+		E40A394D2D568F3800DD6629 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E45728DC2D500FB400D66C3E /* Project object */;
+			containerPortal = E40A39342D568F3700DD6629 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E45728E32D500FB400D66C3E;
+			remoteGlobalIDString = E40A393B2D568F3700DD6629;
 			remoteInfo = VideoSharingCommunity;
 		};
-		E45728FF2D500FB500D66C3E /* PBXContainerItemProxy */ = {
+		E40A39572D568F3800DD6629 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E45728DC2D500FB400D66C3E /* Project object */;
+			containerPortal = E40A39342D568F3700DD6629 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E45728E32D500FB400D66C3E;
+			remoteGlobalIDString = E40A393B2D568F3700DD6629;
 			remoteInfo = VideoSharingCommunity;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E45728E42D500FB400D66C3E /* VideoSharingCommunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoSharingCommunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E45728F42D500FB500D66C3E /* VideoSharingCommunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoSharingCommunityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E45728FE2D500FB500D66C3E /* VideoSharingCommunityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoSharingCommunityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40A393C2D568F3700DD6629 /* VideoSharingCommunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoSharingCommunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40A394C2D568F3800DD6629 /* VideoSharingCommunityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoSharingCommunityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40A39562D568F3800DD6629 /* VideoSharingCommunityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoSharingCommunityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45A76082D65034B00A7DD1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E45728E62D500FB400D66C3E /* VideoSharingCommunity */ = {
+		E40A393E2D568F3700DD6629 /* VideoSharingCommunity */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = VideoSharingCommunity;
 			sourceTree = "<group>";
 		};
-		E45728F72D500FB500D66C3E /* VideoSharingCommunityTests */ = {
+		E40A394F2D568F3800DD6629 /* VideoSharingCommunityTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = VideoSharingCommunityTests;
 			sourceTree = "<group>";
 		};
-		E45729012D500FB500D66C3E /* VideoSharingCommunityUITests */ = {
+		E40A39592D568F3800DD6629 /* VideoSharingCommunityUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = VideoSharingCommunityUITests;
 			sourceTree = "<group>";
@@ -48,21 +57,25 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E45728E12D500FB400D66C3E /* Frameworks */ = {
+		E40A39392D568F3700DD6629 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45A760F2D6504C200A7DD1B /* FirebaseDatabase in Frameworks */,
+				E45A76132D6504D200A7DD1B /* FirebaseFirestore in Frameworks */,
+				E45A760D2D6504C200A7DD1B /* FirebaseAuth in Frameworks */,
+				E45A76112D6504D200A7DD1B /* FirebaseAnalytics in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E40A39492D568F3800DD6629 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E45728F12D500FB500D66C3E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E45728FB2D500FB500D66C3E /* Frameworks */ = {
+		E40A39532D568F3800DD6629 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -72,157 +85,174 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E45728DB2D500FB400D66C3E = {
+		E40A39332D568F3700DD6629 = {
 			isa = PBXGroup;
 			children = (
-				E45728E62D500FB400D66C3E /* VideoSharingCommunity */,
-				E45728F72D500FB500D66C3E /* VideoSharingCommunityTests */,
-				E45729012D500FB500D66C3E /* VideoSharingCommunityUITests */,
-				E45728E52D500FB400D66C3E /* Products */,
+				E45A76082D65034B00A7DD1B /* GoogleService-Info.plist */,
+				E40A393E2D568F3700DD6629 /* VideoSharingCommunity */,
+				E40A394F2D568F3800DD6629 /* VideoSharingCommunityTests */,
+				E40A39592D568F3800DD6629 /* VideoSharingCommunityUITests */,
+				E45A760B2D6504C200A7DD1B /* Frameworks */,
+				E40A393D2D568F3700DD6629 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E45728E52D500FB400D66C3E /* Products */ = {
+		E40A393D2D568F3700DD6629 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E45728E42D500FB400D66C3E /* VideoSharingCommunity.app */,
-				E45728F42D500FB500D66C3E /* VideoSharingCommunityTests.xctest */,
-				E45728FE2D500FB500D66C3E /* VideoSharingCommunityUITests.xctest */,
+				E40A393C2D568F3700DD6629 /* VideoSharingCommunity.app */,
+				E40A394C2D568F3800DD6629 /* VideoSharingCommunityTests.xctest */,
+				E40A39562D568F3800DD6629 /* VideoSharingCommunityUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E45A760B2D6504C200A7DD1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E45728E32D500FB400D66C3E /* VideoSharingCommunity */ = {
+		E40A393B2D568F3700DD6629 /* VideoSharingCommunity */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E45729082D500FB500D66C3E /* Build configuration list for PBXNativeTarget "VideoSharingCommunity" */;
+			buildConfigurationList = E40A39602D568F3800DD6629 /* Build configuration list for PBXNativeTarget "VideoSharingCommunity" */;
 			buildPhases = (
-				E45728E02D500FB400D66C3E /* Sources */,
-				E45728E12D500FB400D66C3E /* Frameworks */,
-				E45728E22D500FB400D66C3E /* Resources */,
+				E40A39382D568F3700DD6629 /* Sources */,
+				E40A39392D568F3700DD6629 /* Frameworks */,
+				E40A393A2D568F3700DD6629 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E45728E62D500FB400D66C3E /* VideoSharingCommunity */,
+				E40A393E2D568F3700DD6629 /* VideoSharingCommunity */,
 			);
 			name = VideoSharingCommunity;
 			packageProductDependencies = (
+				E45A760C2D6504C200A7DD1B /* FirebaseAuth */,
+				E45A760E2D6504C200A7DD1B /* FirebaseDatabase */,
+				E45A76102D6504D200A7DD1B /* FirebaseAnalytics */,
+				E45A76122D6504D200A7DD1B /* FirebaseFirestore */,
 			);
 			productName = VideoSharingCommunity;
-			productReference = E45728E42D500FB400D66C3E /* VideoSharingCommunity.app */;
+			productReference = E40A393C2D568F3700DD6629 /* VideoSharingCommunity.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E45728F32D500FB500D66C3E /* VideoSharingCommunityTests */ = {
+		E40A394B2D568F3800DD6629 /* VideoSharingCommunityTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E457290B2D500FB500D66C3E /* Build configuration list for PBXNativeTarget "VideoSharingCommunityTests" */;
+			buildConfigurationList = E40A39632D568F3800DD6629 /* Build configuration list for PBXNativeTarget "VideoSharingCommunityTests" */;
 			buildPhases = (
-				E45728F02D500FB500D66C3E /* Sources */,
-				E45728F12D500FB500D66C3E /* Frameworks */,
-				E45728F22D500FB500D66C3E /* Resources */,
+				E40A39482D568F3800DD6629 /* Sources */,
+				E40A39492D568F3800DD6629 /* Frameworks */,
+				E40A394A2D568F3800DD6629 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E45728F62D500FB500D66C3E /* PBXTargetDependency */,
+				E40A394E2D568F3800DD6629 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				E45728F72D500FB500D66C3E /* VideoSharingCommunityTests */,
+				E40A394F2D568F3800DD6629 /* VideoSharingCommunityTests */,
 			);
 			name = VideoSharingCommunityTests;
 			packageProductDependencies = (
 			);
 			productName = VideoSharingCommunityTests;
-			productReference = E45728F42D500FB500D66C3E /* VideoSharingCommunityTests.xctest */;
+			productReference = E40A394C2D568F3800DD6629 /* VideoSharingCommunityTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E45728FD2D500FB500D66C3E /* VideoSharingCommunityUITests */ = {
+		E40A39552D568F3800DD6629 /* VideoSharingCommunityUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E457290E2D500FB500D66C3E /* Build configuration list for PBXNativeTarget "VideoSharingCommunityUITests" */;
+			buildConfigurationList = E40A39662D568F3800DD6629 /* Build configuration list for PBXNativeTarget "VideoSharingCommunityUITests" */;
 			buildPhases = (
-				E45728FA2D500FB500D66C3E /* Sources */,
-				E45728FB2D500FB500D66C3E /* Frameworks */,
-				E45728FC2D500FB500D66C3E /* Resources */,
+				E40A39522D568F3800DD6629 /* Sources */,
+				E40A39532D568F3800DD6629 /* Frameworks */,
+				E40A39542D568F3800DD6629 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				E45729002D500FB500D66C3E /* PBXTargetDependency */,
+				E40A39582D568F3800DD6629 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				E45729012D500FB500D66C3E /* VideoSharingCommunityUITests */,
+				E40A39592D568F3800DD6629 /* VideoSharingCommunityUITests */,
 			);
 			name = VideoSharingCommunityUITests;
 			packageProductDependencies = (
 			);
 			productName = VideoSharingCommunityUITests;
-			productReference = E45728FE2D500FB500D66C3E /* VideoSharingCommunityUITests.xctest */;
+			productReference = E40A39562D568F3800DD6629 /* VideoSharingCommunityUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E45728DC2D500FB400D66C3E /* Project object */ = {
+		E40A39342D568F3700DD6629 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					E45728E32D500FB400D66C3E = {
+					E40A393B2D568F3700DD6629 = {
 						CreatedOnToolsVersion = 16.2;
 					};
-					E45728F32D500FB500D66C3E = {
+					E40A394B2D568F3800DD6629 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = E45728E32D500FB400D66C3E;
+						TestTargetID = E40A393B2D568F3700DD6629;
 					};
-					E45728FD2D500FB500D66C3E = {
+					E40A39552D568F3800DD6629 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = E45728E32D500FB400D66C3E;
+						TestTargetID = E40A393B2D568F3700DD6629;
 					};
 				};
 			};
-			buildConfigurationList = E45728DF2D500FB400D66C3E /* Build configuration list for PBXProject "VideoSharingCommunity" */;
+			buildConfigurationList = E40A39372D568F3700DD6629 /* Build configuration list for PBXProject "VideoSharingCommunity" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = E45728DB2D500FB400D66C3E;
+			mainGroup = E40A39332D568F3700DD6629;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E45A760A2D6504A300A7DD1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = E45728E52D500FB400D66C3E /* Products */;
+			productRefGroup = E40A393D2D568F3700DD6629 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E45728E32D500FB400D66C3E /* VideoSharingCommunity */,
-				E45728F32D500FB500D66C3E /* VideoSharingCommunityTests */,
-				E45728FD2D500FB500D66C3E /* VideoSharingCommunityUITests */,
+				E40A393B2D568F3700DD6629 /* VideoSharingCommunity */,
+				E40A394B2D568F3800DD6629 /* VideoSharingCommunityTests */,
+				E40A39552D568F3800DD6629 /* VideoSharingCommunityUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E45728E22D500FB400D66C3E /* Resources */ = {
+		E40A393A2D568F3700DD6629 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45A76092D65034B00A7DD1B /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E40A394A2D568F3800DD6629 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E45728F22D500FB500D66C3E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E45728FC2D500FB500D66C3E /* Resources */ = {
+		E40A39542D568F3800DD6629 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,21 +262,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E45728E02D500FB400D66C3E /* Sources */ = {
+		E40A39382D568F3700DD6629 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E45728F02D500FB500D66C3E /* Sources */ = {
+		E40A39482D568F3800DD6629 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E45728FA2D500FB500D66C3E /* Sources */ = {
+		E40A39522D568F3800DD6629 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,20 +286,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		E45728F62D500FB500D66C3E /* PBXTargetDependency */ = {
+		E40A394E2D568F3800DD6629 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E45728E32D500FB400D66C3E /* VideoSharingCommunity */;
-			targetProxy = E45728F52D500FB500D66C3E /* PBXContainerItemProxy */;
+			target = E40A393B2D568F3700DD6629 /* VideoSharingCommunity */;
+			targetProxy = E40A394D2D568F3800DD6629 /* PBXContainerItemProxy */;
 		};
-		E45729002D500FB500D66C3E /* PBXTargetDependency */ = {
+		E40A39582D568F3800DD6629 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E45728E32D500FB400D66C3E /* VideoSharingCommunity */;
-			targetProxy = E45728FF2D500FB500D66C3E /* PBXContainerItemProxy */;
+			target = E40A393B2D568F3700DD6629 /* VideoSharingCommunity */;
+			targetProxy = E40A39572D568F3800DD6629 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		E45729062D500FB500D66C3E /* Debug */ = {
+		E40A395E2D568F3800DD6629 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -332,7 +362,7 @@
 			};
 			name = Debug;
 		};
-		E45729072D500FB500D66C3E /* Release */ = {
+		E40A395F2D568F3800DD6629 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -388,7 +418,7 @@
 			};
 			name = Release;
 		};
-		E45729092D500FB500D66C3E /* Debug */ = {
+		E40A39612D568F3800DD6629 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -416,7 +446,7 @@
 			};
 			name = Debug;
 		};
-		E457290A2D500FB500D66C3E /* Release */ = {
+		E40A39622D568F3800DD6629 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -444,7 +474,7 @@
 			};
 			name = Release;
 		};
-		E457290C2D500FB500D66C3E /* Debug */ = {
+		E40A39642D568F3800DD6629 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -462,7 +492,7 @@
 			};
 			name = Debug;
 		};
-		E457290D2D500FB500D66C3E /* Release */ = {
+		E40A39652D568F3800DD6629 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -480,7 +510,7 @@
 			};
 			name = Release;
 		};
-		E457290F2D500FB500D66C3E /* Debug */ = {
+		E40A39672D568F3800DD6629 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -496,7 +526,7 @@
 			};
 			name = Debug;
 		};
-		E45729102D500FB500D66C3E /* Release */ = {
+		E40A39682D568F3800DD6629 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -515,43 +545,77 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E45728DF2D500FB400D66C3E /* Build configuration list for PBXProject "VideoSharingCommunity" */ = {
+		E40A39372D568F3700DD6629 /* Build configuration list for PBXProject "VideoSharingCommunity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E45729062D500FB500D66C3E /* Debug */,
-				E45729072D500FB500D66C3E /* Release */,
+				E40A395E2D568F3800DD6629 /* Debug */,
+				E40A395F2D568F3800DD6629 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E45729082D500FB500D66C3E /* Build configuration list for PBXNativeTarget "VideoSharingCommunity" */ = {
+		E40A39602D568F3800DD6629 /* Build configuration list for PBXNativeTarget "VideoSharingCommunity" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E45729092D500FB500D66C3E /* Debug */,
-				E457290A2D500FB500D66C3E /* Release */,
+				E40A39612D568F3800DD6629 /* Debug */,
+				E40A39622D568F3800DD6629 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E457290B2D500FB500D66C3E /* Build configuration list for PBXNativeTarget "VideoSharingCommunityTests" */ = {
+		E40A39632D568F3800DD6629 /* Build configuration list for PBXNativeTarget "VideoSharingCommunityTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E457290C2D500FB500D66C3E /* Debug */,
-				E457290D2D500FB500D66C3E /* Release */,
+				E40A39642D568F3800DD6629 /* Debug */,
+				E40A39652D568F3800DD6629 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E457290E2D500FB500D66C3E /* Build configuration list for PBXNativeTarget "VideoSharingCommunityUITests" */ = {
+		E40A39662D568F3800DD6629 /* Build configuration list for PBXNativeTarget "VideoSharingCommunityUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E457290F2D500FB500D66C3E /* Debug */,
-				E45729102D500FB500D66C3E /* Release */,
+				E40A39672D568F3800DD6629 /* Debug */,
+				E40A39682D568F3800DD6629 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E45A760A2D6504A300A7DD1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E45A760C2D6504C200A7DD1B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E45A760A2D6504A300A7DD1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E45A760E2D6504C200A7DD1B /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E45A760A2D6504A300A7DD1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E45A76102D6504D200A7DD1B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E45A760A2D6504A300A7DD1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		E45A76122D6504D200A7DD1B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E45A760A2D6504A300A7DD1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = E45728DC2D500FB400D66C3E /* Project object */;
+	rootObject = E40A39342D568F3700DD6629 /* Project object */;
 }
