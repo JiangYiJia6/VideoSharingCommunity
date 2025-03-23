@@ -6,12 +6,28 @@
 //
 
 import SwiftUI
+import Firebase
+import AVKit
 
 struct ContentView: View {
     var body: some View {
-        NavigationStack{
-            LoginView()
+        NavigationView{
+            VStack{
+                LoginView()
+//                GeometryReader{
+//                    let size = $0.size
+//                    let safeArea = $0.safeAreaInsets
+//                    
+//                    Video(size:size,safeArea: safeArea)
+//                        .ignoresSafeArea()
+//                }
+//                .preferredColorScheme(.dark)
+
+            }
+        }.onAppear{
+            print("Firebase Initialized: \(FirebaseApp.app() != nil)")
         }
+        
     }
 }
 

@@ -54,9 +54,10 @@ struct Video: View {
                     comments: $comments,
                     isPressed: $isPressed,
                     commentOffsets: $commentOffsets,
-                    isFullScreen: $isFullScreen, // Pass the video ID to VideoPlayerView
-                    videoId: videoId
-                )
+                    videoId: videoId,
+                    isFullScreen: $isFullScreen
+                    )
+                
                 .frame(width: videoPlayerSize.width, height: videoPlayerSize.height)
                 .onAppear {
                     // Fetch comments when the view appears
@@ -88,9 +89,18 @@ struct Video: View {
                                 let size = geometry.size
                                 
                                 if let videoURL = videoURLs[videoID] {
-                                    VideoPlayer(player: AVPlayer(url: videoURL))
+                                    let player = AVPlayer(url: videoURL)
+                                    
+                                    VideoPlayer(player: player)
                                         .frame(width: size.width, height: size.height)
                                         .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
+                                        .onAppear {
+                                            player.play() // Autoplay when visible
+                                            player.isMuted = true // Mute videos to prevent overlapping audio
+                                        }
+                                        .onDisappear {
+                                            player.pause() // Pause when out of view
+                                        }
                                 } else {
                                     ProgressView()
                                         .frame(width: size.width, height: size.height)
@@ -100,7 +110,6 @@ struct Video: View {
                             }
                             .frame(height: 200)
                         }
-
                     }
                     .padding(.horizontal, 15)
                     .padding(.top, 10)
@@ -136,7 +145,10 @@ struct Video: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
 
+
+struct Video_Previews: PreviewProvider {
+    static var previews: some View {
+        Video(size: CGSize(width: 100, height: 100), safeArea: EdgeInsets())
+    }
+}

@@ -32,14 +32,6 @@ struct HomeView: View {
                                 .foregroundColor(.gray)
                         }
                         
-                        VStack(alignment: .leading) {
-                            Text("Welcome,")
-                                .font(.caption)
-                                .foregroundColor(.gray)
-                            
-                            Text(user.username)
-                                .font(.headline)
-                        }
                         Spacer()
                     }
                     .padding()

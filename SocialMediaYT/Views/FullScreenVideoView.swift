@@ -17,6 +17,12 @@ struct FullScreenVideoView: View {
             if let player = player {
                 VideoPlayer(player: player)
                     .edgesIgnoringSafeArea(.all)
+                    .onAppear {
+                        setOrientation(.portrait) // Force portrait mode
+                    }
+                    .onDisappear {
+                        setOrientation(.all) // Restore default orientations
+                    }
             } else {
                 Text("No video available")
                     .foregroundColor(.white)
@@ -39,10 +45,14 @@ struct FullScreenVideoView: View {
         }
         .background(Color.black.edgesIgnoringSafeArea(.all))
     }
+    
+    
+    private func setOrientation(_ orientation: UIInterfaceOrientationMask) {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: orientation))
+    }
 }
-
 
 #Preview {
     FullScreenVideoView()
 }
-

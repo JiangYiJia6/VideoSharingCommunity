@@ -70,8 +70,7 @@ struct PostCard: View {
                         comments: $comments,
                         isPressed: .constant(false),
                         commentOffsets: $commentOffsets,
-                        isFullScreen: $isFullScreen,
-                        videoId: post.id.uuidString
+                        videoId: post.id.uuidString, isFullScreen: $isFullScreen
                     )
                     .frame(height: 400)
                     .onAppear {
