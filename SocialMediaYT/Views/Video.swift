@@ -23,7 +23,7 @@ struct Video: View {
     @State private var commentOffsets: [CGFloat] = []
     @State private var videoURLs: [String: URL] = [:]
     @State private var isFullScreen = false
-
+    
     @State private var videoId: String = "5dc885d1-bc5d-42a8-b47b-82267319075a"// Assuming you start with the first video ID
     
     @State private var recommendedVideoIDs: [String] = [
@@ -32,10 +32,13 @@ struct Video: View {
         "7df7accf-b4f6-47ff-bff3-57c9c093a19c",
         "d8a4b4b8-1017-43b8-b6a0-a22714b967a6"
     ]
-
-
+    @State private var recommendedPlayers: [String: AVPlayer] = [:]
+    
+    
+    
     
     var body: some View {
+        
         VStack(spacing: 0) {
             let videoPlayerSize: CGSize = .init(width: size.width, height: size.height / 3.5)
             
@@ -54,10 +57,8 @@ struct Video: View {
                     comments: $comments,
                     isPressed: $isPressed,
                     commentOffsets: $commentOffsets,
-                    videoId: videoId,
-                    isFullScreen: $isFullScreen
-                    )
-                
+                    videoId: videoId, isFullScreen: $isFullScreen // Pass the video ID to VideoPlayerView
+                )
                 .frame(width: videoPlayerSize.width, height: videoPlayerSize.height)
                 .onAppear {
                     // Fetch comments when the view appears
@@ -88,19 +89,10 @@ struct Video: View {
                             GeometryReader { geometry in
                                 let size = geometry.size
                                 
-                                if let videoURL = videoURLs[videoID] {
-                                    let player = AVPlayer(url: videoURL)
-                                    
+                                if let player = recommendedPlayers[videoID] {
                                     VideoPlayer(player: player)
                                         .frame(width: size.width, height: size.height)
                                         .clipShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-                                        .onAppear {
-                                            player.play() // Autoplay when visible
-                                            player.isMuted = true // Mute videos to prevent overlapping audio
-                                        }
-                                        .onDisappear {
-                                            player.pause() // Pause when out of view
-                                        }
                                 } else {
                                     ProgressView()
                                         .frame(width: size.width, height: size.height)
@@ -110,6 +102,7 @@ struct Video: View {
                             }
                             .frame(height: 200)
                         }
+                        
                     }
                     .padding(.horizontal, 15)
                     .padding(.top, 10)
@@ -136,19 +129,22 @@ struct Video: View {
                     if let videoURL = videoURL {
                         DispatchQueue.main.async {
                             videoURLs[videoID] = videoURL
+                            
+                            let player = AVPlayer(url: videoURL)
+                            player.play()
+                            player.isMuted = true
+                            recommendedPlayers[videoID] = player
                         }
                     }
                 }
             }
-
+            
         }
     }
 }
 
 
-
-struct Video_Previews: PreviewProvider {
-    static var previews: some View {
-        Video(size: CGSize(width: 100, height: 100), safeArea: EdgeInsets())
-    }
+#Preview {
+    ContentView()
 }
+

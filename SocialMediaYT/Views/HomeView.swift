@@ -11,7 +11,7 @@ struct HomeView: View {
     let user: User
 
     var body: some View {
-        NavigationView {
+       // NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
                     HStack {
@@ -42,6 +42,7 @@ struct HomeView: View {
                 PostListView(posts: posts) // Display user posts
             }
             .navigationTitle(user.username)
+            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Image(systemName: "pencil.and.outline")
@@ -55,7 +56,7 @@ struct HomeView: View {
             }
         }
     }
-}
+//}
 
 #Preview {
     HomeView(user: User(

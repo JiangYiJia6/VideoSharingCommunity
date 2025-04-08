@@ -112,6 +112,9 @@ struct SignUpView: View {
 struct TopicSelectionView: View {
     var userID: String
     @State private var selectedTopics: [String: Bool] = [:]
+    @State private var navigateToMainTab: Bool = false
+    @State private var user: User?
+    
     let topicOptions = ["Nature", "Music", "Technology", "Sports", "Art", "Science", "Gaming", "Travel", "Cooking", "Fitness"]
     @Environment(\.presentationMode) var presentationMode
 
@@ -121,48 +124,71 @@ struct TopicSelectionView: View {
     }
 
     var body: some View {
-        VStack {
-            Text("Select Topics of Interest:")
-                .font(.headline)
-                .padding()
-
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(topicOptions, id: \.self) { topic in
-                        Toggle(topic, isOn: Binding(
-                            get: { selectedTopics[topic] ?? false },
-                            set: { selectedTopics[topic] = $0 }
-                        ))
+        NavigationStack{
+            VStack {
+                Text("Select Topics of Interest:")
+                    .font(.headline)
+                    .padding()
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach(topicOptions, id: \.self) { topic in
+                            Toggle(topic, isOn: Binding(
+                                get: { selectedTopics[topic] ?? false },
+                                set: { selectedTopics[topic] = $0 }
+                            ))
+                        }
                     }
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(8)
                 }
+                
+                Button("Continue") {
+                    saveUserTopics()
+                }
+                .frame(maxWidth: .infinity)
                 .padding()
-                .background(Color(.systemGray6))
+                .background(Color.black)
+                .foregroundColor(.white)
                 .cornerRadius(8)
             }
-
-            Button("Continue") {
-                saveUserTopics()
-            }
-            .frame(maxWidth: .infinity)
             .padding()
-            .background(Color.black)
-            .foregroundColor(.white)
-            .cornerRadius(8)
+            .navigationDestination(isPresented: $navigateToMainTab) {
+                    if let user = user {
+                        MainTabView(user: user)
+                    }
+            }
         }
-        .padding()
     }
 
     private func saveUserTopics() {
         let selectedTopicsList = selectedTopics.filter { $0.value }.map { $0.key }
         let db = Firestore.firestore()
         let userRef = db.collection("users").document(userID)
-
+        
         userRef.updateData(["topicTags": selectedTopicsList]) { error in
             if let error = error {
-                print("Error updating topics: \(error)")
-            } else {
-                print("Topics updated successfully")
-                presentationMode.wrappedValue.dismiss()
+                print("Error updating topics: \(error.localizedDescription)")
+                return
+            }
+            
+            // Fetch the user and navigate
+            userRef.getDocument { document, error in
+                if let document = document, document.exists {
+                    let data = document.data() ?? [:]
+                    let loadedUser = User(
+                        username: data["username"] as? String ?? "",
+                        password: data["password"] as? String ?? "",
+                        userProfileImage: data["userProfileImage"] as? String ?? "",
+                        topicTags: data["topicTags"] as? [String] ?? [],
+                        posts: [] // posts are not needed right now
+                    )
+                    self.user = loadedUser
+                    self.navigateToMainTab = true
+                } else {
+                    print("Error fetching user after topic selection: \(error?.localizedDescription ?? "Unknown error")")
+                }
             }
         }
     }

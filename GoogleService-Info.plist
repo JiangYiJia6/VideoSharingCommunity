@@ -9,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>socialMediaYT</string>
+	<string>com.serafinoPampena.SocialMediaYT</string>
 	<key>PROJECT_ID</key>
 	<string>videosharingcommunity-7ec61</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:695189731867:ios:369f0a1bb42f2e92fed6be</string>
+	<string>1:695189731867:ios:c1b549a5b49fb6e1fed6be</string>
 </dict>
 </plist>

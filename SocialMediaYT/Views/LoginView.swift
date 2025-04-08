@@ -16,7 +16,7 @@ struct LoginView: View {
     @State private var authenticatedUser: User?
 
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack(spacing: 20) {
                 Image(systemName: "person.fill")
                     .resizable()
@@ -76,12 +76,14 @@ struct LoginView: View {
             }
             .padding()
             .navigationDestination(isPresented: $navigateToHome) {
+            //.fullScreenCover(isPresented: $navigateToHome){
                 if let authenticatedUser = authenticatedUser {
-                    HomeView(user: authenticatedUser)
+                    //HomeView(user: authenticatedUser)
+                    MainTabView(user: authenticatedUser)
                 }
             }
         }
-    }
+    //}
 
     private func authenticateUser() {
         let db = Firestore.firestore()

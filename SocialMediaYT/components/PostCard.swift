@@ -1,22 +1,12 @@
 import SwiftUI
-import AVKit
 
 struct PostCard: View {
     let post: Post
     let showProfileLink: Bool
 
     @State private var selectedStory: Story?
-    @State private var player: AVPlayer? = nil
-    @State private var isPlaying: Bool = false
-    @State private var progress: CGFloat = 0
-    @State private var lastDraggedProgress: CGFloat = 0
-    @State private var isSeeking: Bool = false
-    @State private var isFinishedPlaying: Bool = false
-    @State private var isFullScreen: Bool = false
-    @State private var commentOffsets: [CGFloat] = []
-    @State private var comments: [DanmakuComment] = []
-    @State private var showPlayerControls: Bool = true  // Added state
-
+    @State private var isVideoPlayerPresented: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             // Profile Header
@@ -29,7 +19,6 @@ struct PostCard: View {
                     .shadow(radius: 3)
                     .frame(width: 70, height: 70)
                     .onTapGesture {
-                        print("Tapped on profile image: \(post.userProfileImage)")
                         self.selectedStory = Story(imageName: post.userProfileImage)
                     }
 
@@ -54,45 +43,35 @@ struct PostCard: View {
                     .padding()
             }
 
-            // Content: Image or Video
+            // Display Image with Tap to Open Video
             VStack {
-                if let videoURLString = post.videoURL, let videoURL = URL(string: videoURLString) {
-                    VideoPlayerView(
-                        size: CGSize(width: UIScreen.main.bounds.width, height: 400),
-                        safeArea: EdgeInsets(),
-                        player: $player,
-                        showPlayerControls: $showPlayerControls,  // Pass the state here
-                        isPlaying: $isPlaying,
-                        progress: $progress,
-                        lastDraggedProgress: $lastDraggedProgress,
-                        isSeeking: $isSeeking,
-                        isFinishedPlaying: $isFinishedPlaying,
-                        comments: $comments,
-                        isPressed: .constant(false),
-                        commentOffsets: $commentOffsets,
-                        videoId: post.id.uuidString, isFullScreen: $isFullScreen
-                    )
-                    .frame(height: 400)
-                    .onAppear {
-                        player = AVPlayer(url: videoURL)
+                Image(post.postImageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxHeight: 400)
+                    .onTapGesture {
+                        if post.videoURL != nil {
+                            isVideoPlayerPresented.toggle()
+                        }
                     }
-                } else {
-                    Image(post.postImageName)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(maxHeight: 400)
-                }
             }
             .background(Color.white)
             .cornerRadius(0)
+            .fullScreenCover(isPresented: $isVideoPlayerPresented) {
+                if let videoURLString = post.videoURL, !videoURLString.isEmpty {
+                    Video(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height),
+                          safeArea: EdgeInsets())
+                }
+	
+            }
 
             // Action Buttons
             HStack {
-                Button { print("Like") } label: { Image(systemName: "heart") }
-                Button { print("Comment") } label: { Image(systemName: "message") }
+                //Button { print("Like") } label: { Image(systemName: "heart") }
+                //Button { print("Comment") } label: { Image(systemName: "message") }
                 Button { print("Share") } label: { Image(systemName: "paperplane") }
-                Spacer()
-                Button { print("Bookmark") } label: { Image(systemName: "bookmark") }
+                //Spacer()
+                //Button { print("Bookmark") } label: { Image(systemName: "bookmark") }
             }
             .foregroundColor(.black)
             .font(.title3)

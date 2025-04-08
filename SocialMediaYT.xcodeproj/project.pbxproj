@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC41A4E12D7B769400CCE729 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC41A4E02D7B769400CCE729 /* GoogleService-Info.plist */; };
-		FC41A4E22D7B769400CCE729 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC41A4E02D7B769400CCE729 /* GoogleService-Info.plist */; };
-		FC41A4E32D7B769400CCE729 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC41A4E02D7B769400CCE729 /* GoogleService-Info.plist */; };
 		FC41A4E62D7B773900CCE729 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FC41A4E52D7B773900CCE729 /* FirebaseAnalytics */; };
 		FC41A4E92D7B774F00CCE729 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = FC41A4E82D7B774F00CCE729 /* FirebaseAuth */; };
 		FC41A4EB2D7B775500CCE729 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = FC41A4EA2D7B775500CCE729 /* FirebaseCore */; };
 		FC41A4ED2D7B775E00CCE729 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = FC41A4EC2D7B775E00CCE729 /* FirebaseFirestore */; };
+		FCA96E902D9727A500371656 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCA96E8F2D9727A500371656 /* GoogleService-Info.plist */; };
+		FCA96E912D9727A500371656 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCA96E8F2D9727A500371656 /* GoogleService-Info.plist */; };
+		FCA96E922D9727A500371656 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCA96E8F2D9727A500371656 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FC41A4E02D7B769400CCE729 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC98DDA92D55A54C001DF1D4 /* SocialMediaYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMediaYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC98DDB92D55A54D001DF1D4 /* SocialMediaYTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialMediaYTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC98DDC32D55A54D001DF1D4 /* SocialMediaYTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialMediaYTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA96E8F2D9727A500371656 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -101,8 +101,8 @@
 				FC98DDBC2D55A54D001DF1D4 /* SocialMediaYTTests */,
 				FC98DDC62D55A54D001DF1D4 /* SocialMediaYTUITests */,
 				FC98DDAA2D55A54C001DF1D4 /* Products */,
-				FC41A4E02D7B769400CCE729 /* GoogleService-Info.plist */,
 				FC41A4E72D7B774F00CCE729 /* Frameworks */,
+				FCA96E8F2D9727A500371656 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,7 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC41A4E22D7B769400CCE729 /* GoogleService-Info.plist in Resources */,
+				FCA96E922D9727A500371656 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC41A4E12D7B769400CCE729 /* GoogleService-Info.plist in Resources */,
+				FCA96E902D9727A500371656 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC41A4E32D7B769400CCE729 /* GoogleService-Info.plist in Resources */,
+				FCA96E912D9727A500371656 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +442,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = serafinoPampena.SocialMediaYT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.serafinoPampena.SocialMediaYT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -470,7 +470,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = serafinoPampena.SocialMediaYT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.serafinoPampena.SocialMediaYT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
